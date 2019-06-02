@@ -74,6 +74,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/cliente.h">
+			<Option target="tp_final_ayp3"/>
+		</Unit>
 		<Unit filename="C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/main.c">
 			<Option target="tp_final_ayp3"/>
 		</Unit>
