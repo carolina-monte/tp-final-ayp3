@@ -63,4 +63,23 @@ void insertar_en_lista(Cliente *n_cliente)
         insertar_en_lista(n_cliente->referido);
     }
 }
+
+Cliente *busqueda_por_id(Cliente *cliente, int id)
+{
+    if (cliente->id==id)
+    {
+        //Encontrado
+        return cliente;
+    }
+    else if(cliente->referido==NULL)
+    {
+        //No encontrado, por lo tanto devuelve cliente nulo
+        return cliente->referido;
+    }
+    else
+    {
+        //Busco recursivamente
+        return busqueda_por_id(cliente->referido, id);
+    }
+}
 #endif //TP_FINAL_AYP3_CLIENTE_H
