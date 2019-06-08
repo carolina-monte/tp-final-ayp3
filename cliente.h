@@ -52,8 +52,15 @@ Cliente *iniciar_cliente()
     return nuevoCliente;
 }
 
-void insertar_en_lista()
+void insertar_en_lista(Cliente *n_cliente)
 {
-
+    if (n_cliente==NULL)
+    {
+        n_cliente=iniciar_cliente();
+    }
+    else
+    {
+        insertar_en_lista(n_cliente->referido);
+    }
 }
 #endif //TP_FINAL_AYP3_CLIENTE_H
