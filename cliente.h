@@ -1,7 +1,8 @@
 //
 // Created by Emiliano on 2/6/2019.
 //
-
+#include <stdio.h>
+#include <stdlib.h>
 #ifndef TP_FINAL_AYP3_CLIENTE_H
 #define TP_FINAL_AYP3_CLIENTE_H
 typedef struct miCliente{
@@ -15,23 +16,23 @@ struct miCliente *referido;
 } Cliente;
 
 //Declaro nuevo cliente, revisar ID
-Cliente nuevo_cliente(int id, char nombre[100],
+Cliente *nuevo_cliente(int id, char nombre[100],
 char apellido[100], int edad, char direccion[100])
 {
-    Cliente n_cliente;
+    Cliente *n_cliente;
     n_cliente= (Cliente) malloc(sizeof(n_cliente));
-    n_cliente.id=id;
-    n_cliente.nombre=nombre;
-    n_cliente.apellido=apellido;
-    n_cliente.edad=edad;
-    n_cliente.direccion=direccion;
-    n_cliente.referido=NULL;
+    n_cliente->id=id;
+    n_cliente->nombre=nombre;
+    n_cliente->apellido=apellido;
+    n_cliente->edad=edad;
+    n_cliente->direccion=direccion;
+    n_cliente->referido=NULL;
     return n_cliente;
 }
 //Valores por pantalla del nuevo cliente
-Cliente iniciar_cliente()
+Cliente *iniciar_cliente()
 {
-    Cliente nuevoCliente;
+    Cliente *nuevoCliente;
     int id;
     int edad;
     char nombre[100];
@@ -49,5 +50,10 @@ Cliente iniciar_cliente()
     scanf("%s",direccion);
     nuevoCliente=nuevo_cliente(id,nombre,apellido,edad,direccion);
     return nuevoCliente;
+}
+
+void insertar_en_lista()
+{
+
 }
 #endif //TP_FINAL_AYP3_CLIENTE_H
