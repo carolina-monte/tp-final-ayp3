@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2019.1\bin\cmake\win\bin\cmake.exe" -E re
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3"
+CMAKE_SOURCE_DIR = "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,60 @@ tp_final_ayp3/fast:
 	$(MAKE) -f CMakeFiles\tp_final_ayp3.dir\build.make CMakeFiles/tp_final_ayp3.dir/build
 .PHONY : tp_final_ayp3/fast
 
+cliente.obj: cliente.c.obj
+
+.PHONY : cliente.obj
+
+# target to build an object file
+cliente.c.obj:
+	$(MAKE) -f CMakeFiles\tp_final_ayp3.dir\build.make CMakeFiles/tp_final_ayp3.dir/cliente.c.obj
+.PHONY : cliente.c.obj
+
+cliente.i: cliente.c.i
+
+.PHONY : cliente.i
+
+# target to preprocess a source file
+cliente.c.i:
+	$(MAKE) -f CMakeFiles\tp_final_ayp3.dir\build.make CMakeFiles/tp_final_ayp3.dir/cliente.c.i
+.PHONY : cliente.c.i
+
+cliente.s: cliente.c.s
+
+.PHONY : cliente.s
+
+# target to generate assembly for a file
+cliente.c.s:
+	$(MAKE) -f CMakeFiles\tp_final_ayp3.dir\build.make CMakeFiles/tp_final_ayp3.dir/cliente.c.s
+.PHONY : cliente.c.s
+
+credito.obj: credito.c.obj
+
+.PHONY : credito.obj
+
+# target to build an object file
+credito.c.obj:
+	$(MAKE) -f CMakeFiles\tp_final_ayp3.dir\build.make CMakeFiles/tp_final_ayp3.dir/credito.c.obj
+.PHONY : credito.c.obj
+
+credito.i: credito.c.i
+
+.PHONY : credito.i
+
+# target to preprocess a source file
+credito.c.i:
+	$(MAKE) -f CMakeFiles\tp_final_ayp3.dir\build.make CMakeFiles/tp_final_ayp3.dir/credito.c.i
+.PHONY : credito.c.i
+
+credito.s: credito.c.s
+
+.PHONY : credito.s
+
+# target to generate assembly for a file
+credito.c.s:
+	$(MAKE) -f CMakeFiles\tp_final_ayp3.dir\build.make CMakeFiles/tp_final_ayp3.dir/credito.c.s
+.PHONY : credito.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -158,6 +212,12 @@ help:
 	@echo ... tp_final_ayp3
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... cliente.obj
+	@echo ... cliente.i
+	@echo ... cliente.s
+	@echo ... credito.obj
+	@echo ... credito.i
+	@echo ... credito.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2019.1\bin\cmake\win\bin\cmake.exe" -E re
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3"
+CMAKE_SOURCE_DIR = "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tp_final_ayp3.dir/depend.make
@@ -58,30 +58,60 @@ include CMakeFiles/tp_final_ayp3.dir/flags.make
 
 CMakeFiles/tp_final_ayp3.dir/main.c.obj: CMakeFiles/tp_final_ayp3.dir/flags.make
 CMakeFiles/tp_final_ayp3.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tp_final_ayp3.dir/main.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\tp_final_ayp3.dir\main.c.obj   -c "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tp_final_ayp3.dir/main.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\tp_final_ayp3.dir\main.c.obj   -c "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\main.c"
 
 CMakeFiles/tp_final_ayp3.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tp_final_ayp3.dir/main.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\main.c" > CMakeFiles\tp_final_ayp3.dir\main.c.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\main.c" > CMakeFiles\tp_final_ayp3.dir\main.c.i
 
 CMakeFiles/tp_final_ayp3.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tp_final_ayp3.dir/main.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\main.c" -o CMakeFiles\tp_final_ayp3.dir\main.c.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\main.c" -o CMakeFiles\tp_final_ayp3.dir\main.c.s
+
+CMakeFiles/tp_final_ayp3.dir/cliente.c.obj: CMakeFiles/tp_final_ayp3.dir/flags.make
+CMakeFiles/tp_final_ayp3.dir/cliente.c.obj: ../cliente.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/tp_final_ayp3.dir/cliente.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\tp_final_ayp3.dir\cliente.c.obj   -c "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cliente.c"
+
+CMakeFiles/tp_final_ayp3.dir/cliente.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tp_final_ayp3.dir/cliente.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cliente.c" > CMakeFiles\tp_final_ayp3.dir\cliente.c.i
+
+CMakeFiles/tp_final_ayp3.dir/cliente.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tp_final_ayp3.dir/cliente.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cliente.c" -o CMakeFiles\tp_final_ayp3.dir\cliente.c.s
+
+CMakeFiles/tp_final_ayp3.dir/credito.c.obj: CMakeFiles/tp_final_ayp3.dir/flags.make
+CMakeFiles/tp_final_ayp3.dir/credito.c.obj: ../credito.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/tp_final_ayp3.dir/credito.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\tp_final_ayp3.dir\credito.c.obj   -c "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\credito.c"
+
+CMakeFiles/tp_final_ayp3.dir/credito.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tp_final_ayp3.dir/credito.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\credito.c" > CMakeFiles\tp_final_ayp3.dir\credito.c.i
+
+CMakeFiles/tp_final_ayp3.dir/credito.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tp_final_ayp3.dir/credito.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\credito.c" -o CMakeFiles\tp_final_ayp3.dir\credito.c.s
 
 # Object files for target tp_final_ayp3
 tp_final_ayp3_OBJECTS = \
-"CMakeFiles/tp_final_ayp3.dir/main.c.obj"
+"CMakeFiles/tp_final_ayp3.dir/main.c.obj" \
+"CMakeFiles/tp_final_ayp3.dir/cliente.c.obj" \
+"CMakeFiles/tp_final_ayp3.dir/credito.c.obj"
 
 # External object files for target tp_final_ayp3
 tp_final_ayp3_EXTERNAL_OBJECTS =
 
 tp_final_ayp3.exe: CMakeFiles/tp_final_ayp3.dir/main.c.obj
+tp_final_ayp3.exe: CMakeFiles/tp_final_ayp3.dir/cliente.c.obj
+tp_final_ayp3.exe: CMakeFiles/tp_final_ayp3.dir/credito.c.obj
 tp_final_ayp3.exe: CMakeFiles/tp_final_ayp3.dir/build.make
 tp_final_ayp3.exe: CMakeFiles/tp_final_ayp3.dir/linklibs.rsp
 tp_final_ayp3.exe: CMakeFiles/tp_final_ayp3.dir/objects1.rsp
 tp_final_ayp3.exe: CMakeFiles/tp_final_ayp3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable tp_final_ayp3.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable tp_final_ayp3.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\tp_final_ayp3.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -94,6 +124,6 @@ CMakeFiles/tp_final_ayp3.dir/clean:
 .PHONY : CMakeFiles/tp_final_ayp3.dir/clean
 
 CMakeFiles/tp_final_ayp3.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3" "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3" "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug" "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug" "C:\Users\Emiliano\Desktop\ayp3\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles\tp_final_ayp3.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3" "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3" "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug" "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug" "C:\Users\carol\Desktop\TP FINAL\tp-final-ayp3\cmake-build-debug\CMakeFiles\tp_final_ayp3.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/tp_final_ayp3.dir/depend
 
