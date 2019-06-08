@@ -51,7 +51,7 @@ Cliente *iniciar_cliente()
     nuevoCliente=nuevo_cliente(id,nombre,apellido,edad,direccion);
     return nuevoCliente;
 }
-
+//Insercion recursiva
 void insertar_en_lista(Cliente *n_cliente)
 {
     if (n_cliente==NULL)
