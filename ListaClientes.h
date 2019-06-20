@@ -9,8 +9,12 @@
 typedef struct nodo{
     Cliente *cliente;
     struct nodo *sig;
-} *Lista;
+} *ListaClientes;
 
-Lista getnodo();
+ListaClientes getnodo()
+ListaClientes BuscarByNombre();
+ListaClientes BuscarByApellido();
+ListaClientes BuscarByNombreYApellido();
+
 
 #endif //TP_FINAL_AYP3_LISTACLIENTES_H
