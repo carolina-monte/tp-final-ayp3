@@ -9,13 +9,13 @@
 #include "credito.h"
 
 typedef struct nodo{
+    int ID;
     Credito *credito;
     struct nodo *sig;
 } *ListaCreditos;
 
 ListaCreditos getnodo();
-ListaCreditos BuscarByNombre();
-ListaCreditos BuscarByApellido();
-ListaCreditos BuscarByNombreYApellido();
+ListaCreditos BuscarByCliente();
+ListaCreditos BuscarByMonto();
 
 #endif //TP_FINAL_AYP3_LISTACREDITOS_H

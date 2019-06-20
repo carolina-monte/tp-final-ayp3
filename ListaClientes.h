@@ -7,6 +7,7 @@
 
 #include "cliente.h"
 typedef struct nodo{
+    int ID;
     Cliente *cliente;
     struct nodo *sig;
 } *ListaClientes;
@@ -15,6 +16,7 @@ ListaClientes getnodo();
 ListaClientes BuscarByNombre();
 ListaClientes BuscarByApellido();
 ListaClientes BuscarByNombreYApellido();
+ListaClientes BuscarByID();
 
 
 #endif //TP_FINAL_AYP3_LISTACLIENTES_H
