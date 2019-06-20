@@ -5,6 +5,8 @@
 #ifndef TP_FINAL_AYP3_CREDITO_H
 #define TP_FINAL_AYP3_CREDITO_H
 
+#include "cliente.h"
+
 typedef struct miCredito{
 double montoTotal;
 double montoDeLaCuota;
