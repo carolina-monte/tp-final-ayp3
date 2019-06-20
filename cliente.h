@@ -3,6 +3,8 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include "ListaCreditos.h"
+
 #ifndef TP_FINAL_AYP3_CLIENTE_H
 #define TP_FINAL_AYP3_CLIENTE_H
 typedef struct miCliente{
@@ -12,8 +14,7 @@ char apellido[100];
 int edad;
 char direccion[100];
 struct miCliente *referido;
-Credito misCreditos[10]; //Luego transformar en una lista y un eror que solo permita 10 prestasmos y adaptar el proyecto a lista//  
-//agergar lista de prestamos al struct
+ListaCreditos misCreditos;
 } Cliente;
 
 //Declaro nuevo cliente, revisar ID

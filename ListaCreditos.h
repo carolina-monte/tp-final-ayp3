@@ -8,13 +8,13 @@
 
 #include "credito.h"
 
-typedef struct nodo{
+typedef struct nodoCredito{
     int ID;
     Credito *credito;
     struct nodo *sig;
 } *ListaCreditos;
 
-ListaCreditos getnodo();
+ListaCreditos getnodoCredito();
 ListaCreditos BuscarByCliente();
 ListaCreditos BuscarByMonto();
 

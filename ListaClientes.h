@@ -6,13 +6,13 @@
 #define TP_FINAL_AYP3_LISTACLIENTES_H
 
 #include "cliente.h"
-typedef struct nodo{
+typedef struct nodoCliente{
     int ID;
     Cliente *cliente;
     struct nodo *sig;
 } *ListaClientes;
 
-ListaClientes getnodo();
+ListaClientes getnodoCliente();
 ListaClientes BuscarByNombre();
 ListaClientes BuscarByApellido();
 ListaClientes BuscarByNombreYApellido();
