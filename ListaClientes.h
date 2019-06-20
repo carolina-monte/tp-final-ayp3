@@ -11,7 +11,7 @@ typedef struct nodo{
     struct nodo *sig;
 } *ListaClientes;
 
-ListaClientes getnodo()
+ListaClientes getnodo();
 ListaClientes BuscarByNombre();
 ListaClientes BuscarByApellido();
 ListaClientes BuscarByNombreYApellido();

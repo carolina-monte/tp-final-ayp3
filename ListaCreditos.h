@@ -5,4 +5,17 @@
 #ifndef TP_FINAL_AYP3_LISTACREDITOS_H
 #define TP_FINAL_AYP3_LISTACREDITOS_H
 
+
+#include "credito.h"
+
+typedef struct nodo{
+    Credito *credito;
+    struct nodo *sig;
+} *ListaCreditos;
+
+ListaCreditos getnodo();
+ListaCreditos BuscarByNombre();
+ListaCreditos BuscarByApellido();
+ListaCreditos BuscarByNombreYApellido();
+
 #endif //TP_FINAL_AYP3_LISTACREDITOS_H
