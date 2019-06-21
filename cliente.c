@@ -68,3 +68,8 @@ Cliente *busqueda_por_id(Cliente *cliente, int id)
 }
 
 
+
+int main(){
+return 0;
+}
+
