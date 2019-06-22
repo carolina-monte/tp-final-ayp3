@@ -79,10 +79,12 @@ Cliente *busqueda_por_nombre(Cliente *clientes, char nombre[100])
 
     while(NULL != puntero){
 
-        //Elemento sin referencia a siguiente
-        if(puntero->nombre==nombre){
+        //si son iguales devuelve 0
+        if(strcmp(puntero->nombre,nombre)==0){
+            printf("Entre al if\n");
             if(cliente_por_nombre==NULL)
             {
+
                 cliente_por_nombre=(Cliente*)malloc(sizeof(Cliente));
                 strcpy(cliente_por_nombre->nombre,puntero->nombre);
                 strcpy(cliente_por_nombre->apellido,puntero->apellido);

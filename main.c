@@ -23,11 +23,6 @@ int main(){
         switch(opcion){
             case 1:
                 clientes=insertar_en_lista(clientes);
-                if(clientes->referido==NULL){
-                    printf("Hurra por NULL\n");//Sigue siendo nulo!!!!
-                }else{
-                    printf("Apellido nuevo cliente: %s\n",clientes->referido->apellido);
-                }
                 break;
             case 2:
                 imprimirClientes(clientes);
@@ -39,7 +34,8 @@ int main(){
                 char nombre[100];
                 printf("Ingrese el nombre\n");
                 scanf("%s",nombre);
-                Cliente *clientes_nombre=busqueda_por_nombre(clientes,nombre);
+                Cliente *clientes_nombre=NULL;
+                clientes_nombre=busqueda_por_nombre(clientes,nombre);
                 imprimirClientes(clientes_nombre);
 
             }
