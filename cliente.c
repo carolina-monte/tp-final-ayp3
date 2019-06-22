@@ -71,7 +71,7 @@ Cliente *busqueda_por_id(Cliente *cliente, int id)
 Cliente *busqueda_por_nombre(Cliente *clientes, char nombre[100])
 {
     //Devuelve lista de clientes con el mismo nombre
-    Cliente *cliente_por_nombre=NULL;
+    Cliente *cliente_por_nombre=NULL;//Header
     Cliente *p;
     Cliente *puntero=clientes;
     //Verificar al inicio
@@ -83,16 +83,16 @@ Cliente *busqueda_por_nombre(Cliente *clientes, char nombre[100])
 
             if(cliente_por_nombre==NULL)
             {
-                p=malloc(sizeof(Cliente));
+                p=(Cliente*)malloc(sizeof(Cliente));
                 strcpy(p->nombre,puntero->nombre);
                 strcpy(p->apellido,puntero->apellido);
                 strcpy(p->direccion,puntero->direccion);
                 p->edad=puntero->edad;
                 p->id==puntero->id;
                 p->misCreditos=puntero->misCreditos;
-                cliente_por_nombre=p;
-                p->referido=NULL;
-                p->referido=malloc(sizeof(Cliente));
+                cliente_por_nombre=p; //Conservo el header
+                /*p->referido=NULL;
+                p->referido=malloc(sizeof(Cliente));*/
             }
             else
             {
@@ -101,6 +101,7 @@ Cliente *busqueda_por_nombre(Cliente *clientes, char nombre[100])
             }
 
             p=p->referido;
+            p->referido=NULL;
             puntero=puntero->referido;
 
         }
