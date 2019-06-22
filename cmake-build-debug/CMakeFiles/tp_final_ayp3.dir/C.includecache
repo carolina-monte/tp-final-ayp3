@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/carol/Documents/tp-final-ayp3/ListaClientes.h
+cliente.h
+C:/Users/carol/Documents/tp-final-ayp3/cliente.h
+
+C:/Users/carol/Documents/tp-final-ayp3/ListaCreditos.h
+credito.h
+C:/Users/carol/Documents/tp-final-ayp3/credito.h
+
+C:/Users/carol/Documents/tp-final-ayp3/cliente.c
+cliente.h
+C:/Users/carol/Documents/tp-final-ayp3/cliente.h
+string.h
+-
+
+C:/Users/carol/Documents/tp-final-ayp3/cliente.h
+stdio.h
+-
+stdlib.h
+-
+ListaCreditos.h
+C:/Users/carol/Documents/tp-final-ayp3/ListaCreditos.h
+
+C:/Users/carol/Documents/tp-final-ayp3/credito.c
+credito.h
+C:/Users/carol/Documents/tp-final-ayp3/credito.h
+
+C:/Users/carol/Documents/tp-final-ayp3/credito.h
+cliente.h
+C:/Users/carol/Documents/tp-final-ayp3/cliente.h
+
+C:/Users/carol/Documents/tp-final-ayp3/main.c
+stdio.h
+-
+ListaClientes.h
+C:/Users/carol/Documents/tp-final-ayp3/ListaClientes.h
+

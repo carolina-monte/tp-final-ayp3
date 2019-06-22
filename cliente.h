@@ -25,7 +25,7 @@ Cliente *nuevo_cliente(int id, char nombre[100], char apellido[100], int edad, c
 Cliente *iniciar_cliente();
 
 //Insercion recursiva
-void insertar_en_lista(Cliente *n_cliente);
+Cliente *insertar_en_lista(Cliente *n_cliente);
 //Busquedas
 Cliente *busqueda_por_id(Cliente *cliente, int id);
 Cliente *busqueda_por_nombre(Cliente clientes[10], char nombre[100]);

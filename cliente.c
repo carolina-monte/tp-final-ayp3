@@ -37,16 +37,18 @@ Cliente *iniciar_cliente()
     return nuevoCliente;
 }
 //Insercion recursiva
-void insertar_en_lista(Cliente *n_cliente)
+Cliente *insertar_en_lista(Cliente *n_cliente)
 {
     if (n_cliente==NULL)
     {
-        n_cliente=iniciar_cliente();
+        n_cliente= iniciar_cliente();
+        return n_cliente;
     }
     else
     {
-        insertar_en_lista(n_cliente->referido);
+        n_cliente->referido=insertar_en_lista(n_cliente->referido);
     }
+    return n_cliente;
 }
 
 Cliente *busqueda_por_id(Cliente *cliente, int id)
@@ -71,40 +73,32 @@ Cliente *busqueda_por_id(Cliente *cliente, int id)
 Cliente *busqueda_por_nombre(Cliente *clientes, char nombre[100])
 {
     //Devuelve lista de clientes con el mismo nombre
-    Cliente *cliente_por_nombre=NULL;//Header
-    Cliente *p;
+    Cliente *cliente_por_nombre=NULL;//Header nueva lista
+    Cliente *p;//recorre clientes_por_nombre
     Cliente *puntero=clientes;
     //Verificar al inicio
 
-    while(puntero){
-        if (puntero->nombre==nombre)
+    while(NULL != puntero){
+        printf("sigo en el while \n");
+        //Elemento sin referencia a siguiente
+
+        if(cliente_por_nombre==NULL)
         {
-            //Elemento sin referencia a siguiente
-
-            if(cliente_por_nombre==NULL)
-            {
-                p=(Cliente*)malloc(sizeof(Cliente));
-                strcpy(p->nombre,puntero->nombre);
-                strcpy(p->apellido,puntero->apellido);
-                strcpy(p->direccion,puntero->direccion);
-                p->edad=puntero->edad;
-                p->id==puntero->id;
-                p->misCreditos=puntero->misCreditos;
-                cliente_por_nombre=p; //Conservo el header
-                /*p->referido=NULL;
-                p->referido=malloc(sizeof(Cliente));*/
-            }
-            else
-            {
-
-                p->referido=puntero;
-            }
-
-            p=p->referido;
-            p->referido=NULL;
-            puntero=puntero->referido;
-
+            cliente_por_nombre=puntero;
+            cliente_por_nombre->referido=NULL;
+            p=cliente_por_nombre;
+            //Conservo el header
+            /*p->referido=NULL;
+            p->referido=malloc(sizeof(Cliente));*/
         }
+        else
+        {
+            p->referido=puntero;
+            p=p->referido;
+            p->referido=NULL; //No guardas los siguientes clientes de la lista
+        }
+        puntero=puntero->referido;
+
     }
     return cliente_por_nombre;
 
@@ -130,7 +124,7 @@ void imprimirClientes(Cliente *clientes)
     else{
         while(c_puntero!=NULL)
         {
-            printf("Nombre: %s\n Apellido: %s ",clientes->nombre,clientes->apellido);
+            printf("Nombre: %s\n Apellido: %s \n",clientes->nombre,clientes->apellido);
             c_puntero=c_puntero->referido;
         }
     }
@@ -139,7 +133,7 @@ void imprimirClientes(Cliente *clientes)
 
 
 
-int main(){
+int main1(){
     Cliente *clientes=NULL;
     int opcion;
     do{
