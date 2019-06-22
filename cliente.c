@@ -73,29 +73,42 @@ Cliente *busqueda_por_nombre(Cliente *clientes, char nombre[100])
 {
     //Devuelve lista de clientes con el mismo nombre
     Cliente *cliente_por_nombre=NULL;//Header nueva lista
-    Cliente *p;//recorre clientes_por_nombre
+    Cliente *fin;//recorre clientes_por_nombre
     Cliente *puntero=clientes;
     //Verificar al inicio
 
     while(NULL != puntero){
-        printf("sigo en el while \n");
-        //Elemento sin referencia a siguiente
 
-        if(cliente_por_nombre==NULL)
-        {
-            cliente_por_nombre=puntero;
-            cliente_por_nombre->referido=NULL;
-            p=cliente_por_nombre;
-            //Conservo el header
-            /*p->referido=NULL;
-            p->referido=malloc(sizeof(Cliente));*/
+        //Elemento sin referencia a siguiente
+        if(puntero->nombre==nombre){
+            if(cliente_por_nombre==NULL)
+            {
+                cliente_por_nombre=(Cliente*)malloc(sizeof(Cliente));
+                strcpy(cliente_por_nombre->nombre,puntero->nombre);
+                strcpy(cliente_por_nombre->apellido,puntero->apellido);
+                cliente_por_nombre->id=puntero->id;
+                cliente_por_nombre->edad=puntero->edad;
+                strcpy(cliente_por_nombre->direccion,puntero->direccion);
+                cliente_por_nombre->referido=NULL;
+                fin=cliente_por_nombre;
+
+            }
+            else
+            {
+                //Inicializo nuevo nodo
+                fin->referido=(Cliente*)malloc(sizeof(Cliente));
+                //Avanzo
+                fin=fin->referido;
+                //Copia los datos
+                strcpy(fin->nombre,puntero->nombre);
+                strcpy(fin->apellido,puntero->apellido);
+                fin->id=puntero->id;
+                fin->edad=puntero->edad;
+                strcpy(fin->direccion,puntero->direccion);
+                fin->referido=NULL; //Preparo para el siguiente nodo
+            }
         }
-        else
-        {
-            p->referido=puntero;
-            p=p->referido;
-            p->referido=NULL; //No guardas los siguientes clientes de la lista
-        }
+
         puntero=puntero->referido;
 
     }
