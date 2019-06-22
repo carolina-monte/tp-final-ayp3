@@ -1,5 +1,6 @@
-#include <stdio.h>
-#include "ListaClientes.h"
+#include "cliente.c"
+#include <string.h>
+
 /*
 int main() {
     ListaCreditos todosLosCreditos;
@@ -8,6 +9,7 @@ int main() {
     printf("Hello, World!\n");
     return 0;
 }*/
+
 
 int main(){
     Cliente *clientes=NULL;
@@ -23,6 +25,8 @@ int main(){
                 clientes=insertar_en_lista(clientes);
                 if(clientes->referido==NULL){
                     printf("Hurra por NULL\n");//Sigue siendo nulo!!!!
+                }else{
+                    printf("Apellido nuevo cliente: %s\n",clientes->referido->apellido);
                 }
                 break;
             case 2:

@@ -41,8 +41,7 @@ Cliente *insertar_en_lista(Cliente *n_cliente)
 {
     if (n_cliente==NULL)
     {
-        n_cliente= iniciar_cliente();
-        return n_cliente;
+        return iniciar_cliente();
     }
     else
     {
@@ -115,18 +114,18 @@ Cliente *busqueda_por_nombreYapellido(Cliente clientes[10], char nombre[100], ch
 
 void imprimirClientes(Cliente *clientes)
 {
-    Cliente *c_puntero=clientes;
     if(clientes==NULL)
     {
         printf("No hay clientes registrados\n");
 
     }
     else{
-        while(c_puntero!=NULL)
-        {
-            printf("Nombre: %s\n Apellido: %s \n",clientes->nombre,clientes->apellido);
-            c_puntero=c_puntero->referido;
+
+        do{
+            printf("Nombre: %s\nApellido: %s\n",clientes->nombre,clientes->apellido);
+            clientes=clientes->referido;
         }
+        while(clientes!=NULL);
     }
 }
 
@@ -147,6 +146,8 @@ int main1(){
                 insertar_en_lista(clientes);
                 if(clientes==NULL){
                     printf("Sigue siendo NULL\n");//Sigue siendo nulo!!!!
+                }else{
+                    printf("Apellido nuevo cliente: %2\n",clientes->referido->apellido);
                 }
                 break;
             case 2:
