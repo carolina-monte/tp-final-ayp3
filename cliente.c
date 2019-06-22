@@ -4,7 +4,7 @@
 Cliente *nuevo_cliente(int id, char nombre[100], char apellido[100], int edad, char direccion[100])
 {
     Cliente *n_cliente;
-    n_cliente= malloc(sizeof(n_cliente));
+    n_cliente= (Cliente*)malloc(sizeof(Cliente));
     n_cliente->id = id;
     strcpy(n_cliente->nombre, nombre);
     strcpy(n_cliente->apellido, apellido);
