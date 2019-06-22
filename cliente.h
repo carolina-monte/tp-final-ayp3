@@ -28,8 +28,8 @@ Cliente *iniciar_cliente();
 void insertar_en_lista(Cliente *n_cliente);
 //Busquedas
 Cliente *busqueda_por_id(Cliente *cliente, int id);
-Cliente busqueda_por_nombre(Cliente clientes[10], char nombre[100]);
-Cliente busqueda_por_apellido(Cliente clientes[10], char apellido[100]);
-Cliente busqueda_por_nombreYapellido(Cliente clientes[10], char nombre[100], char apellido[100]);
+Cliente *busqueda_por_nombre(Cliente clientes[10], char nombre[100]);
+Cliente *busqueda_por_apellido(Cliente clientes[10], char apellido[100]);
+Cliente *busqueda_por_nombreYapellido(Cliente clientes[10], char nombre[100], char apellido[100]);
 
 #endif //TP_FINAL_AYP3_CLIENTE_H
