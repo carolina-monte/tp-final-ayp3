@@ -18,9 +18,11 @@ int main(){
     do{
         printf("1. Agregar cliente\n");
         printf("2. Imprimir clientes\n");
-        printf("3. Buscar por nombre\n");
-        printf("4. Cargar archivo\n");
-        printf("5. Salir\n");
+        printf("3. Buscar cliente por nombre\n");
+        printf("4. Buscar cliente por apellido\n");
+        printf("5. Buscar cliente por ID\n");
+        printf("6. Cargar archivo\n");
+        printf("7. Salir\n");
         scanf("%d",&opcion);
         switch(opcion){
             case 1:
@@ -42,7 +44,34 @@ int main(){
 
             }
                 break;
-            case 4:{
+            case 4:
+            {
+
+
+                char apellido[100];
+                printf("Ingrese el apellido\n");
+                scanf("%s",apellido);
+                Cliente *clientes_apellido=NULL;
+                clientes_apellido=busqueda_por_apellido(clientes,apellido);
+                imprimirClientes(clientes_apellido);
+
+            }
+                break;
+
+            case 5:    {
+
+
+                int ID = 0;
+                printf("Ingrese el ID\n");
+                scanf("%d",ID);
+                Cliente *clientes_ID=NULL;
+                clientes_ID=busqueda_por_id(clientes,ID);
+                imprimirClientes(clientes_ID);
+
+            }
+            break;
+
+            case 6:{
                 registro_de_empleados=fopen("registro.csv","w");
                 if(registro_de_empleados==NULL){
                     //En caso de Error
@@ -59,13 +88,14 @@ int main(){
                 }
                 fclose(registro_de_empleados);
             }
+            break;
 
-            case 5:
+            case 7:
                 break;
         }
 
     }
-    while(opcion!=5);
+    while(opcion!=7);
 
     return 0;
 }
