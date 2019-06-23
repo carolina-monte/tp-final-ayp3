@@ -57,6 +57,7 @@ int main(){
                     fprintf(registro_de_empleados,"%s,%s,%d\n",puntero->nombre,puntero->apellido,puntero->id);
                     puntero=puntero->referido;
                 }
+                fclose(registro_de_empleados);
             }
 
             case 5:
