@@ -79,12 +79,12 @@ Cliente *busqueda_por_nombre(Cliente *clientes, char nombre[100])
 
     while(NULL != puntero){
 
-        //si son iguales devuelve 0
+        //strcmp(): si son iguales devuelve 0
         if(strcmp(puntero->nombre,nombre)==0){
-            printf("Entre al if\n");
+            //En solo al encontrar el primer elemento que coincida con la varible en parametro
             if(cliente_por_nombre==NULL)
             {
-
+                //Nuevo nodo, asignacion de espacio en memoria
                 cliente_por_nombre=(Cliente*)malloc(sizeof(Cliente));
                 strcpy(cliente_por_nombre->nombre,puntero->nombre);
                 strcpy(cliente_por_nombre->apellido,puntero->apellido);
@@ -95,6 +95,7 @@ Cliente *busqueda_por_nombre(Cliente *clientes, char nombre[100])
                 fin=cliente_por_nombre;
 
             }
+            //Si ya tiene un dato y la lista nueva no es nula, coloca a su sucesor
             else
             {
                 //Inicializo nuevo nodo
