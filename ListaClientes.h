@@ -9,10 +9,10 @@
 typedef struct nodoCliente{
     int ID;
     Cliente *cliente;
-    struct nodo *sig;
+    struct nodoCliente *sig;
 } *ListaClientes;
 
-ListaClientes getnodoCliente();
+ListaClientes insertarNodoCliente();
 ListaClientes BuscarByNombre();
 ListaClientes BuscarByApellido();
 ListaClientes BuscarByNombreYApellido();

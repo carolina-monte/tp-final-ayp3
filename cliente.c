@@ -1,11 +1,10 @@
 # include "cliente.h"
 #include <string.h>
 //Declaro nuevo cliente, revisar ID
-Cliente *nuevo_cliente(int id, char nombre[100], char apellido[100], int edad, char direccion[100])
+Cliente *nuevo_cliente(char nombre[100], char apellido[100], int edad, char direccion[100])
 {
     Cliente *n_cliente;
     n_cliente= (Cliente*)malloc(sizeof(Cliente));
-    n_cliente->id = id;
     strcpy(n_cliente->nombre, nombre);
     strcpy(n_cliente->apellido, apellido);
     strcpy(n_cliente->direccion, direccion);
@@ -17,7 +16,6 @@ Cliente *nuevo_cliente(int id, char nombre[100], char apellido[100], int edad, c
 Cliente *iniciar_cliente()
 {
     Cliente *nuevoCliente=NULL;
-    int id;
     int edad;
     char nombre[100];
     char apellido[100];
@@ -182,7 +180,7 @@ void imprimirClientes(Cliente *clientes)
     else{
 
         do{
-            printf("Nombre: %s\nApellido: %s\n",clientes->nombre,clientes->apellido);
+            printf("\nNombre: %s\nApellido: %s\n",clientes->nombre,clientes->apellido);
             clientes=clientes->referido;
         }
         while(clientes!=NULL);
