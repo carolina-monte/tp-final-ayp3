@@ -1,4 +1,8 @@
 #include "cliente.c"
+#include "ListaClientes.h"
+#ifndef TP_FINAL_AYP3_LISTACLIENTES_H
+#define TP_FINAL_AYP3_LISTACLIENTES_H
+
 ListaClientes insertarNodoCliente(ListaClientes primer_elemento)
 {
     if(primer_elemento==NULL)
@@ -54,3 +58,7 @@ ListaClientes BuscarByNombre(ListaClientes primer_elemento,char nombre[100]){
     return clientes_por:nombre;
 
 }
+int main(void){
+    return 0;
+}
+#endif // TP_FINAL_AYP3_LISTACLIENTES_H

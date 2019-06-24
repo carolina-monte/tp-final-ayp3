@@ -24,17 +24,16 @@ Cliente *iniciar_cliente()
     scanf("%s",nombre);
     printf("Ingrese el apellido:\n");
     scanf("%s",apellido);
-    printf("Ingrese el id de cliente:\n");
-    scanf("%d",&id);
     printf("Ingrese la edad:\n");
     scanf("%d",&edad);
     printf("Ingrese la direccion:\n");
     scanf("%s",direccion);
-    nuevoCliente=nuevo_cliente(id,nombre,apellido,edad,direccion);
+    nuevoCliente=nuevo_cliente(nombre,apellido,edad,direccion);
     if (nuevoCliente == NULL){printf("NULO\n");} //Ya no es null
     return nuevoCliente;
 }
 //Insercion recursiva
+/*
 Cliente *insertar_en_lista(Cliente *n_cliente)
 {
     if (n_cliente==NULL)
@@ -169,7 +168,7 @@ Cliente *busqueda_por_nombreYapellido(Cliente clientes[10], char nombre[100], ch
 {
     return clientes;
 }
-
+*/
 void imprimirClientes(Cliente *clientes)
 {
     if(clientes==NULL)
@@ -189,7 +188,7 @@ void imprimirClientes(Cliente *clientes)
 
 
 
-
+/*
 int main1(){
     Cliente *clientes=NULL;
     int opcion;
@@ -202,11 +201,6 @@ int main1(){
         switch(opcion){
             case 1:
                 insertar_en_lista(clientes);
-                if(clientes==NULL){
-                    printf("Sigue siendo NULL\n");//Sigue siendo nulo!!!!
-                }else{
-                    printf("Apellido nuevo cliente: %2\n",clientes->referido->apellido);
-                }
                 break;
             case 2:
                 imprimirClientes(clientes);
@@ -232,7 +226,8 @@ int main1(){
 
 return 0;
 }
-//int main(){
-//return 0;
-//}
+*/
+int main(){
+return 0;
+}
 

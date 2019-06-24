@@ -22,7 +22,7 @@ struct nodoCredito *misCreditos;
 Cliente *nuevo_cliente(char nombre[100], char apellido[100], int edad, char direccion[100]);
 //Valores por pantalla del nuevo cliente
 Cliente *iniciar_cliente();
-
+void imprimirClientes();
 //Insercion recursiva
 /*Cliente *insertar_en_lista(Cliente *n_cliente);
 //Busquedas
