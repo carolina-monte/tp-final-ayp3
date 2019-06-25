@@ -7,7 +7,6 @@
 
 #include "cliente.h"
 typedef struct nodoCliente{
-    int ID;
     Cliente *cliente;
     struct nodoCliente *sig;
 } *ListaClientes;
