@@ -37,13 +37,19 @@ Cliente *iniciar_cliente()
     return nuevoCliente;
 }
 
-double getMontoAPagar(Cliente cliente_sel){
+double getMontoTotalAPagar(Cliente cliente_sel){
     if(cliente_sel->misCreditos==NULL){
-        printf("No tiene deuda, puede darse de baja");
+        printf("No tiene deuda, puede darse de baja\n");
         return 0.00;
     }else{
-    double resultado=0;
+    double resultado=0.00;
     //Codigo
+    ListaCreditos header=cliente_sel->misCreditos;
+    while(header!=NULL)
+    {
+        resultado=resultado+header->credito->montoTotal;
+        header=header->sig;
+    }
 
     return resultado;
     }
