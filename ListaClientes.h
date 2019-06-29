@@ -15,7 +15,11 @@ ListaClientes insertarNodoCliente();
 ListaClientes BuscarByNombre();
 ListaClientes BuscarByApellido();
 ListaClientes BuscarByNombreYApellido();
+ListaClientes BuscarByRangoDeEdad();
 ListaClientes BuscarByID();
+ListaClientes DarNuevoCredito();
+void pagar_monto();
+ListaClientes DarDeBaja();
 
 
 #endif //TP_FINAL_AYP3_LISTACLIENTES_H
