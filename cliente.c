@@ -210,6 +210,14 @@ void imprimirClientes(Cliente *clientes)
     }
 }
 
+void agregar_nuevo_credito(Cliente cliente){
+
+}
+
+void agregar_referido(Cliente agregar, Cliente referido)
+{
+
+}
 
 
 /*
