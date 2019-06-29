@@ -15,7 +15,9 @@ char apellido[100];
 int id;
 int edad;
 char direccion[100];
+int cantidad_de_creditos;
 struct miCliente *referido;
+//Lista de Creditos
 struct nodoCredito *misCreditos;
 } Cliente;
 

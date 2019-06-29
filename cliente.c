@@ -11,6 +11,7 @@ Cliente *nuevo_cliente(char nombre[100], char apellido[100], int id, int edad, c
     n_cliente->id=id;
     n_cliente->edad = edad;
     n_cliente->referido = NULL;
+    n_cliente->cantidad_de_creditos=0;
     return n_cliente;
 }
 
