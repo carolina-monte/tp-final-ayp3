@@ -36,6 +36,19 @@ Cliente *iniciar_cliente()
     if (nuevoCliente == NULL){printf("NULO\n");} //Ya no es null
     return nuevoCliente;
 }
+
+double getMontoAPagar(Cliente cliente_sel){
+    if(cliente_sel->misCreditos==NULL){
+        printf("No tiene deuda, puede darse de baja");
+        return 0.00;
+    }else{
+    double resultado=0;
+    //Codigo
+
+    return resultado;
+    }
+
+}
 //Insercion recursiva
 /*
 Cliente *insertar_en_lista(Cliente *n_cliente)
