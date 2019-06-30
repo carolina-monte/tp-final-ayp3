@@ -39,6 +39,13 @@ Cliente *iniciar_cliente()
 }
 
 double getMontoTotalAPagar(Cliente cliente_sel){
+    //Caso si cliente es nulo;
+    if(cliente_sel)
+    {
+        return 0.00;
+    }
+
+    //En caso de que la lista de creditos sea nula
     if(cliente_sel->misCreditos==NULL){
         printf("No tiene deuda, puede darse de baja\n");
         return 0.00;
@@ -46,9 +53,13 @@ double getMontoTotalAPagar(Cliente cliente_sel){
     double resultado=0.00;
     //Codigo
     ListaCreditos header=cliente_sel->misCreditos;
+
+    //Mientras no sea nulo, sumar resultado
     while(header!=NULL)
     {
         resultado=resultado+header->credito->montoTotal;
+
+        //Siguiente
         header=header->sig;
     }
 
@@ -216,7 +227,8 @@ void agregar_nuevo_credito(Cliente cliente){
 
 void agregar_referido(Cliente agregar, Cliente referido)
 {
-
+    //Metodo a testear
+    agregar->referido=referido;
 }
 
 
