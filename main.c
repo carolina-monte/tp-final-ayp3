@@ -1,5 +1,6 @@
 #include "cliente.c"
 #include <string.h>
+#include "ListaClientes.h"
 
 /*
 int main() {
@@ -12,6 +13,8 @@ int main() {
 
 
 int main(){
+    ListaCreditos todosLosCreditos;
+    ListaClientes todosLosClientes;
     Cliente *clientes=NULL;
     FILE *registro_de_empleados;
     int opcion;
@@ -19,14 +22,14 @@ int main(){
         printf("1. Agregar cliente\n");
         printf("2. Imprimir clientes\n");
         printf("3. Buscar cliente por nombre\n");
-        printf("4. Buscar cliente por apellido\n");
+        printf("4. Buscar cliente por rango de edad\n");
         printf("5. Buscar cliente por ID\n");
         printf("6. Cargar archivo\n");
         printf("7. Salir\n");
         scanf("%d",&opcion);
         switch(opcion){
             case 1:
-                clientes=insertar_en_lista(clientes);
+                todosLosClientes=insertarNodoCliente(todosLosClientes);
                 break;
             case 2:
                 imprimirClientes(clientes);
@@ -38,8 +41,8 @@ int main(){
                 char nombre[100];
                 printf("Ingrese el nombre\n");
                 scanf("%s",nombre);
-                Cliente *clientes_nombre=NULL;
-                clientes_nombre=busqueda_por_nombre(clientes,nombre);
+                ListaClientes clientesByNombre;
+                clientesByNombre=BuscarByNombre(todosLosClientes,nombre);
                 imprimirClientes(clientes_nombre);
 
             }
@@ -48,11 +51,14 @@ int main(){
             {
 
 
-                char apellido[100];
-                printf("Ingrese el apellido\n");
-                scanf("%s",apellido);
-                Cliente *clientes_apellido=NULL;
-                clientes_apellido=busqueda_por_apellido(clientes,apellido);
+                int edad_minima;
+                int edad_maxima;
+                printf("Ingrese ela edad minima\n");
+                scanf("%d",edad_minima);
+                printf("Ingrese ela edad maxima\n");
+                scanf("%d",edad_maxima);
+                ListaClientes clientesByEdad;
+                clientesByEdad=BuscarByRangoDeEdad(todosLosClientes,edad_minima, edad_maxima);
                 imprimirClientes(clientes_apellido);
 
             }
