@@ -68,9 +68,9 @@ int main(){
                 int ID = 0;
                 printf("Ingrese el ID\n");
                 scanf("%d",ID);
-                Cliente *clientes_ID=NULL;
-                clientes_ID=busqueda_por_id(clientes,ID);
-                imprimirClientes(clientes_ID);
+                ListaClientes clientes_ID=NULL;
+                clientes_ID = BuscarByID(clientes,ID);
+                imprimirLista(clientes_ID);
 
             }
             break;
