@@ -26,6 +26,47 @@ void imprimirLista(ListaClientes lista){
     lista_a_recorrer=lista_a_recorrer->sig;
 }
 
+ListaClientes BuscarById(ListaClientes clientes, int id)
+{
+    ListaClientes senialador=clientes;
+    ListaClientes lista_resultado=NULL;
+    //Esta variable señala siempre el final de la lista para llamarla a la hora de insertar un nuevo elemento
+    ListaClientes ultimo_agregado;
+
+    //Cortar en caso nulo
+    if(señalador==NULL)
+    {
+        return clientes;
+    }
+
+    //Recorrer
+    while (senialador!=NULL){
+
+        if(senialador->cliente->ID=id)
+        {
+            //Caso primer agregado a la lista resultado
+            if(lista_resultado==NULL){
+                lista_resultado=malloc(sizeof(ListaClientes));
+                lista_resultado->cliente=senialador->cliente;
+                lista_resultado->sig=NULL;
+                ultimo_agregado=lista_resultado;
+            }
+            else
+            {
+                ultimo_agregado->sig=malloc((sizeof(ListaClientes)));
+                //avanzo
+                ultimo_agregado=ultimo_agregado->sig;
+                //copio los datos
+                ultimo_agregado->cliente=lista_a_recorrer->cliente;
+                ultimo_agregado->ID=lista_a_recorrer->ID;
+                ultimo_agregado->sig=NULL;
+            }
+        }
+        senialador=senialador->siguiente;
+
+    }
+}
+
 //Devuelve una lista de clientes con el mismo nombre que se pasa por parametro
 ListaClientes BuscarByNombre(ListaClientes primer_elemento,char nombre[100]){
 
