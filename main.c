@@ -32,7 +32,7 @@ int main(){
                 todosLosClientes=insertarNodoCliente(todosLosClientes);
                 break;
             case 2:
-                imprimirClientes(clientes);
+                imprimirLista(todosLosClientes);
                 break;
             case 3:
             {
@@ -43,14 +43,12 @@ int main(){
                 scanf("%s",nombre);
                 ListaClientes clientesByNombre;
                 clientesByNombre=BuscarByNombre(todosLosClientes,nombre);
-                imprimirClientes(clientes_nombre);
+                imprimirLista(clientesByNombre);
 
             }
                 break;
             case 4:
             {
-
-
                 int edad_minima;
                 int edad_maxima;
                 printf("Ingrese ela edad minima\n");
@@ -59,7 +57,7 @@ int main(){
                 scanf("%d",edad_maxima);
                 ListaClientes clientesByEdad;
                 clientesByEdad=BuscarByRangoDeEdad(todosLosClientes,edad_minima, edad_maxima);
-                imprimirClientes(clientes_apellido);
+                imprimirLista(clientesByEdad);
 
             }
                 break;

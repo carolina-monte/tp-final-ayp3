@@ -1,7 +1,5 @@
 #include "cliente.c"
 #include "ListaClientes.h"
-#ifndef TP_FINAL_AYP3_LISTACLIENTES_H
-#define TP_FINAL_AYP3_LISTACLIENTES_H
 
 ListaClientes insertarNodoCliente(ListaClientes primer_elemento)
 {
@@ -17,6 +15,17 @@ ListaClientes insertarNodoCliente(ListaClientes primer_elemento)
     }
     return primer_elemento;
 }
+
+void imprimirLista(ListaClientes lista){
+    ListaClientes lista_a_recorrer=lista
+    //Recorror la lista
+    while(lista_a_recorrer!=NULL){
+        printf("Cliente nombre:%s %s Edad:%d Id:%d",lista_a_recorrer->cliente->nombre,
+        lista_a_recorrer->cliente->apellido,lista_a_recorrer->cliente->edad,lista_a_recorrer->cliente->id);
+    }
+    lista_a_recorrer=lista_a_recorrer->sig;
+}
+
 //Devuelve una lista de clientes con el mismo nombre que se pasa por parametro
 ListaClientes BuscarByNombre(ListaClientes primer_elemento,char nombre[100]){
 
@@ -55,7 +64,7 @@ ListaClientes BuscarByNombre(ListaClientes primer_elemento,char nombre[100]){
         }
         lista_a_recorrer=lista_a_recorrer->sig;
     }
-    return clientes_por:nombre;
+    return clientes_por_nombre;
 
 }
 ListaClientes BuscarByRangoDeEdad(ListaClientes clientes, int edad_minima, int edad_maxima)
@@ -104,4 +113,3 @@ ListaClientes BuscarByRangoDeEdad(ListaClientes clientes, int edad_minima, int e
 int main(void){
     return 0;
 }
-#endif // TP_FINAL_AYP3_LISTACLIENTES_H

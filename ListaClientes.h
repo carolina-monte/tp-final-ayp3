@@ -18,6 +18,7 @@ ListaClientes BuscarByNombreYApellido();
 ListaClientes BuscarByRangoDeEdad();
 ListaClientes BuscarByID();
 ListaClientes DarNuevoCredito();
+void imprimirLista(ListaClientes lista);
 void pagar_monto();
 ListaClientes DarDeBaja();
 
