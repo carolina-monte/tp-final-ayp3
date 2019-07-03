@@ -84,6 +84,10 @@ void menuCliente(Cliente *cliente){
             }
             break;
 
+            case 2:{
+                cliente->misCreditos =insertarNodoCredito(cliente->misCreditos , cliente);
+            }
+
             case 6:
                 break;
 

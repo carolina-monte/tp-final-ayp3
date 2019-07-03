@@ -4,9 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cliente.c" "C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cmake-build-debug/CMakeFiles/tp_final_ayp3.dir/cliente.c.obj"
-  "C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/credito.c" "C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cmake-build-debug/CMakeFiles/tp_final_ayp3.dir/credito.c.obj"
-  "C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/main.c" "C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cmake-build-debug/CMakeFiles/tp_final_ayp3.dir/main.c.obj"
+  "C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/ListaCreditos.c" "C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/cmake-build-debug/CMakeFiles/tp_final_ayp3.dir/ListaCreditos.c.obj"
+  "C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/cliente.c" "C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/cmake-build-debug/CMakeFiles/tp_final_ayp3.dir/cliente.c.obj"
+  "C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/credito.c" "C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/cmake-build-debug/CMakeFiles/tp_final_ayp3.dir/credito.c.obj"
+  "C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/main.c" "C:/Users/Emiliano/Desktop/ayp3/TP FINAL/tp-final-ayp3/cmake-build-debug/CMakeFiles/tp_final_ayp3.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

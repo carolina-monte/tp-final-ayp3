@@ -6,7 +6,7 @@ ListaClientes insertarNodoCliente(ListaClientes primer_elemento)
     if(primer_elemento==NULL)
     {
         primer_elemento=malloc(sizeof(ListaClientes));
-        primer_elemento->cliente=iniciar_cliente();
+        primer_elemento->cliente=iniciarCredito();
         primer_elemento->sig=NULL;
     }
     else
