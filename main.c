@@ -13,8 +13,8 @@ int main() {
 
 
 int main(){
-    ListaCreditos todosLosCreditos;
-    ListaClientes todosLosClientes;
+    ListaCreditos todosLosCreditos=NULL;
+    ListaClientes todosLosClientes=NULL;
     Cliente *clientes=NULL;
     FILE *registro_de_empleados;
     int opcion;
