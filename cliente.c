@@ -38,7 +38,7 @@ Cliente *iniciar_cliente()
     return nuevoCliente;
 }
 
-double getMontoTotalAPagar(Cliente cliente_sel){
+double getMontoTotalAPagar(Cliente *cliente_sel){
     //Caso si cliente es nulo;
     if(cliente_sel)
     {
@@ -67,7 +67,26 @@ double getMontoTotalAPagar(Cliente cliente_sel){
     }
 
 }
+void menuCliente(Cliente *cliente){
+    int opcion;
+    do{
+        printf("1. Agregar cliente recomendado\n");
+        printf("2. Dar de alta Credito del cliente\n");
+        printf("3. Listar Creditos\n");
+        printf("4. Pagar cuota\n");
+        printf("5. Cancelar Total de Credito\n");
+        printf("6. Salir\n");
+        scanf("%d",&opcion);
 
+        switch(opcion){
+            case 1:{
+                cliente->referido=iniciar_cliente();
+            }
+            break;
+
+        }
+    } while(opcion!=6);
+}
 void imprimirClientes(Cliente *clientes)
 {
     if(clientes==NULL)
@@ -89,7 +108,7 @@ void agregar_nuevo_credito(Cliente cliente){
 
 }
 
-void agregar_referido(Cliente agregar, Cliente referido)
+void agregar_referido(Cliente agregar, Cliente *referido)
 {
     //Metodo a testear
     agregar->referido=referido;
@@ -135,7 +154,5 @@ int main1(){
 return 0;
 }
 */
-int main(){
-return 0;
-}
+
 

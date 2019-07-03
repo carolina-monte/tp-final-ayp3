@@ -24,6 +24,8 @@ struct nodoCredito *misCreditos;
 //Declaro nuevo cliente, revisar ID
 Cliente *nuevo_cliente(char nombre[100], char apellido[100], int id, int edad, char direccion[100]);
 //Valores por pantalla del nuevo cliente
+void menuCliente(Cliente *cliente);
+Cliente *insertar_recomendado(Cliente *n_cliente);
 Cliente *iniciar_cliente();
 void imprimirClientes();
 //Insercion recursiva

@@ -24,8 +24,9 @@ int main(){
         printf("3. Buscar cliente por nombre\n");
         printf("4. Buscar cliente por rango de edad\n");
         printf("5. Buscar cliente por ID\n");
-        printf("6. Cargar archivo\n");
-        printf("7. Salir\n");
+        printf("6. Sub menu de clientes");
+        printf("7. Cargar archivo\n");
+        printf("8. Salir\n");
         scanf("%d",&opcion);
         switch(opcion){
             case 1:
@@ -76,6 +77,18 @@ int main(){
             break;
 
             case 6:{
+                int ID = 0;
+                printf("Ingrese el ID del cliente a modificar\n");
+                scanf("%d",ID);
+                ListaClientes clientes_ID=NULL;
+                clientes_ID = BuscarByID(clientes,ID);
+                Cliente *cliente = clientes_ID->cliente;
+                menuCliente(cliente);
+
+            }
+                break;
+
+            case 7:{
                 registro_de_empleados=fopen("registro.csv","w");
                 if(registro_de_empleados==NULL){
                     //En caso de Error
@@ -94,12 +107,12 @@ int main(){
             }
             break;
 
-            case 7:
+            case 8:
                 break;
         }
 
     }
-    while(opcion!=7);
+    while(opcion!=8);
 
     return 0;
 }
