@@ -1,5 +1,6 @@
 # include "cliente.h"
 #include <string.h>
+
 //Declaro nuevo cliente, revisar ID
 Cliente *nuevo_cliente(char nombre[100], char apellido[100], int id, int edad, char direccion[100])
 {
@@ -38,35 +39,35 @@ Cliente *iniciar_cliente()
     return nuevoCliente;
 }
 
-double getMontoTotalAPagar(Cliente cliente_sel){
-    //Caso si cliente es nulo;
-    if(cliente_sel)
-    {
-        return 0.00;
-    }
-
-    //En caso de que la lista de creditos sea nula
-    if(cliente_sel->misCreditos==NULL){
-        printf("No tiene deuda, puede darse de baja\n");
-        return 0.00;
-    }else{
-    double resultado=0.00;
-    //Codigo
-    ListaCreditos header=cliente_sel->misCreditos;
-
-    //Mientras no sea nulo, sumar resultado
-    while(header!=NULL)
-    {
-        resultado=resultado+header->credito->montoTotal;
-
-        //Siguiente
-        header=header->sig;
-    }
-
-    return resultado;
-    }
-
-}
+//double getMontoTotalAPagar(Cliente cliente_sel){
+//    //Caso si cliente es nulo;
+//    if(cliente_sel)
+//    {
+//        return 0.00;
+//    }
+//
+//    //En caso de que la lista de creditos sea nula
+//    if(cliente_sel->misCreditos==NULL){
+//        printf("No tiene deuda, puede darse de baja\n");
+//        return 0.00;
+//    }else{
+//    double resultado=0.00;
+//    //Codigo
+//    ListaCreditos header=cliente_sel->misCreditos;
+//
+//    //Mientras no sea nulo, sumar resultado
+//    while(header!=NULL)
+//    {
+//        resultado=resultado+header->credito->montoTotal;
+//
+//        //Siguiente
+//        header=header->sig;
+//    }
+//
+//    return resultado;
+//    }
+//
+//}
 //Insercion recursiva
 /*
 Cliente *insertar_en_lista(Cliente *n_cliente)
@@ -225,11 +226,11 @@ void agregar_nuevo_credito(Cliente cliente){
 
 }
 
-void agregar_referido(Cliente agregar, Cliente referido)
+/*void agregar_referido(Cliente agregar, Cliente referido)
 {
     //Metodo a testear
     agregar->referido=referido;
-}
+}*/
 
 
 /*
@@ -271,7 +272,5 @@ int main1(){
 return 0;
 }
 */
-int main(){
-return 0;
-}
+
 
