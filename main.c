@@ -70,7 +70,7 @@ int main(){
                 printf("Ingrese el ID\n");
                 scanf("%d",ID);
                 ListaClientes clientes_ID=NULL;
-                clientes_ID = BuscarByID(clientes,ID);
+                clientes_ID = BuscarByID(todosLosClientes,ID);
                 imprimirLista(clientes_ID);
 
             }
@@ -81,7 +81,7 @@ int main(){
                 printf("Ingrese el ID del cliente a modificar\n");
                 scanf("%d",ID);
                 ListaClientes clientes_ID=NULL;
-                clientes_ID = BuscarByID(clientes,ID);
+                clientes_ID = BuscarByID(todosLosClientes,ID);
                 Cliente *cliente = clientes_ID->cliente;
                 menuCliente(cliente);
 
