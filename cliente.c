@@ -39,7 +39,6 @@ Cliente *iniciar_cliente()
     return nuevoCliente;
 }
 
-<<<<<<< HEAD
 //double getMontoTotalAPagar(Cliente cliente_sel){
 //    //Caso si cliente es nulo;
 //    if(cliente_sel)

@@ -7,7 +7,7 @@
 
 
 #include "credito.h"
-
+#include "cliente.h"
 typedef struct nodoCredito{
     int ID;
     struct miCredito *credito;
@@ -17,6 +17,6 @@ typedef struct nodoCredito{
 ListaCreditos getnodoCredito();
 ListaCreditos BuscarByCliente();
 ListaCreditos BuscarByMonto();
-ListaCreditos insertarNodoCredito(ListaCreditos primer_elemento, Cliente *cliente);
+ListaCreditos insertarNodoCredito(ListaCreditos primer_elemento, struct miCliente *cliente);
 
 #endif //TP_FINAL_AYP3_LISTACREDITOS_H

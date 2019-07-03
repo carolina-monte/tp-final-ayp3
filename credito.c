@@ -1,6 +1,6 @@
 # include "credito.h"
 #include "string.h"
-Credito *iniciarCredito(Cliente *cliente);
+
 Credito *nuevo_Credito(double total, double cuota, int cuotas, Cliente *pCliente,char nombre[100]);
 
 Credito *iniciarCredito(Cliente *cliente)
@@ -12,7 +12,7 @@ Credito *iniciarCredito(Cliente *cliente)
     char nombre[100];
     printf("Ingrese el monto total:\n");
     scanf("%lf",montoTotal);
-    printf("ingrese nombre del credito\n")
+    printf("ingrese nombre del credito\n");
     scanf("%s", nombre);
     printf("Ingrese el monto por cuota:\n");
     scanf("%lf",montoDeLaCuota);
@@ -32,7 +32,7 @@ Credito *nuevo_Credito(double montoTotal, double montoDeLaCuota, int cantidadDeC
     n_credito->cantidadDeCuotas = cantidadDeCuotas;
     n_credito->cantidadDeCuotasRestantes=cantidadDeCuotas;
 
-    strcpy(n_credito->nombre, nombre)
+    strcpy(n_credito->nombre, nombre);
     pCliente->cantidad_de_creditos++;
     return n_credito;
 }

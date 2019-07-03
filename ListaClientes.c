@@ -83,7 +83,7 @@ ListaClientes BuscarByNombre(ListaClientes primer_elemento,char nombre[100]){
         if(strcmp(lista_a_recorrer->cliente->nombre,nombre))
         {
             //En caso de que sea el primer elemento a agregar
-            if(clientes_por_nombre=NULL==0)
+            if(clientes_por_nombre==NULL)
             {
                 //Inicializar y copiar datos, en caso de error cambiar por sizeof(struct nodoCliente)
                 clientes_por_nombre=malloc(sizeof(ListaClientes));

@@ -1,0 +1,56 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/ListaClientes.h
+cliente.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cliente.h
+
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/ListaCreditos.c
+ListaCreditos.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/ListaCreditos.h
+credito.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/credito.h
+
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/ListaCreditos.h
+credito.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/credito.h
+cliente.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cliente.h
+
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cliente.c
+cliente.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cliente.h
+string.h
+-
+
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cliente.h
+stdio.h
+-
+stdlib.h
+-
+ListaCreditos.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/ListaCreditos.h
+
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/credito.c
+credito.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/credito.h
+string.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/string.h
+
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/credito.h
+cliente.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cliente.h
+
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/main.c
+cliente.c
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/cliente.c
+string.h
+-
+ListaClientes.h
+C:/Users/Diez 15-03-19/Desktop/tp/tp-final-ayp3/ListaClientes.h
+

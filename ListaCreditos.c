@@ -1,7 +1,8 @@
 //
 // Created by Emiliano on 3/7/2019.
 #include "ListaCreditos.h"
-#include "credito.c"
+#include "credito.h"
+
 ListaCreditos insertarNodoCredito(ListaCreditos primer_elemento, Cliente *cliente)
 {
     if (cliente->cantidad_de_creditos>03){
@@ -17,7 +18,7 @@ ListaCreditos insertarNodoCredito(ListaCreditos primer_elemento, Cliente *client
     }
     else
     {
-        primer_elemento->sig=insertarNodoCredito(primer_elemento->sig);
+        primer_elemento->sig=insertarNodoCredito(primer_elemento->sig, cliente);
     }
     return primer_elemento;
 }
