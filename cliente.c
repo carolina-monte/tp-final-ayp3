@@ -39,6 +39,7 @@ Cliente *iniciar_cliente()
     return nuevoCliente;
 }
 
+<<<<<<< HEAD
 //double getMontoTotalAPagar(Cliente cliente_sel){
 //    //Caso si cliente es nulo;
 //    if(cliente_sel)
@@ -126,85 +127,64 @@ Cliente *busqueda_por_nombre(Cliente *clientes, char nombre[100])
                 strcpy(cliente_por_nombre->direccion,puntero->direccion);
                 cliente_por_nombre->referido=NULL;
                 fin=cliente_por_nombre;
-
-            }
-            //Si ya tiene un dato y la lista nueva no es nula, coloca a su sucesor
-            else
-            {
-                //Inicializo nuevo nodo
-                fin->referido=(Cliente*)malloc(sizeof(Cliente));
-                //Avanzo
-                fin=fin->referido;
-                //Copia los datos
-                strcpy(fin->nombre,puntero->nombre);
-                strcpy(fin->apellido,puntero->apellido);
-                fin->id=puntero->id;
-                fin->edad=puntero->edad;
-                strcpy(fin->direccion,puntero->direccion);
-                fin->referido=NULL; //Preparo para el siguiente nodo
-            }
-        }
-
-        puntero=puntero->referido;
-
+=======
+double getMontoTotalAPagar(Cliente *cliente_sel){
+    //Caso si cliente es nulo;
+    if(cliente_sel)
+    {
+        return 0.00;
     }
-    return cliente_por_nombre;
 
-}
+    //En caso de que la lista de creditos sea nula
+    if(cliente_sel->misCreditos==NULL){
+        printf("No tiene deuda, puede darse de baja\n");
+        return 0.00;
+    }else{
+    double resultado=0.00;
+    //Codigo
+    ListaCreditos header=cliente_sel->misCreditos;
 
-Cliente *busqueda_por_apellido(Cliente *clientes, char apellido[100])
-{
-    //Devuelve lista de clientes con el mismo apellido
-    Cliente *cliente_por_apellido=NULL;//Header nueva lista
-    Cliente *fin;//recorre clientes_por_apellido
-    Cliente *puntero=clientes;
-    //Verificar al inicio
+    //Mientras no sea nulo, sumar resultado
+    while(header!=NULL)
+    {
+        resultado=resultado+header->credito->montoTotal;
 
-    while(NULL != puntero){
-
-        //strcmp(): si son iguales devuelve 0
-        if(strcmp(puntero->apellido,apellido)==0){
-            //En solo al encontrar el primer elemento que coincida con la varible en parametro
-            if(cliente_por_apellido==NULL)
-            {
-                //Nuevo nodo, asignacion de espacio en memoria
-                cliente_por_apellido=(Cliente*)malloc(sizeof(Cliente));
-                strcpy(cliente_por_apellido->nombre,puntero->nombre);
-                strcpy(cliente_por_apellido->apellido,puntero->apellido);
-                cliente_por_apellido->id=puntero->id;
-                cliente_por_apellido->edad=puntero->edad;
-                strcpy(cliente_por_apellido->direccion,puntero->direccion);
-                cliente_por_apellido->referido=NULL;
-                fin=cliente_por_apellido;
-
-            }
-                //Si ya tiene un dato y la lista nueva no es nula, coloca a su sucesor
-            else
-            {
-                //Inicializo nuevo nodo
-                fin->referido=(Cliente*)malloc(sizeof(Cliente));
-                //Avanzo
-                fin=fin->referido;
-                //Copia los datos
-                strcpy(fin->nombre,puntero->nombre);
-                strcpy(fin->apellido,puntero->apellido);
-                fin->id=puntero->id;
-                fin->edad=puntero->edad;
-                strcpy(fin->direccion,puntero->direccion);
-                fin->referido=NULL; //Preparo para el siguiente nodo
-            }
-        }
-
-        puntero=puntero->referido;
-
+        //Siguiente
+        header=header->sig;
     }
-    return cliente_por_apellido;
+
+    return resultado;
+    }
+
 }
-Cliente *busqueda_por_nombreYapellido(Cliente clientes[10], char nombre[100], char apellido[100])
-{
-    return clientes;
+void menuCliente(Cliente *cliente){
+    int opcion;
+    do{
+        printf("1. Agregar cliente recomendado\n");
+        printf("2. Dar de alta Credito del cliente\n");
+        printf("3. Listar Creditos\n");
+        printf("4. Pagar cuota\n");
+        printf("5. Cancelar Total de Credito\n");
+        printf("6. Salir\n");
+        scanf("%d",&opcion);
+>>>>>>> 0289fe82b3a49789783b2be303705f505c9d7416
+
+        switch(opcion){
+            case 1:{
+                cliente->referido=iniciar_cliente();
+            }
+            break;
+
+            case 2:{
+                cliente->misCreditos =insertarNodoCredito(cliente->misCreditos , cliente);
+            }
+
+            case 6:
+                break;
+
+        }
+    } while(opcion!=6);
 }
-*/
 void imprimirClientes(Cliente *clientes)
 {
     if(clientes==NULL)
@@ -226,7 +206,11 @@ void agregar_nuevo_credito(Cliente cliente){
 
 }
 
+<<<<<<< HEAD
 /*void agregar_referido(Cliente agregar, Cliente referido)
+=======
+void agregar_referido(Cliente agregar, Cliente *referido)
+>>>>>>> 0289fe82b3a49789783b2be303705f505c9d7416
 {
     //Metodo a testear
     agregar->referido=referido;

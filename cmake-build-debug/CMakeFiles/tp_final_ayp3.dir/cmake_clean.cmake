@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/tp_final_ayp3.dir/main.c.obj"
   "CMakeFiles/tp_final_ayp3.dir/cliente.c.obj"
   "CMakeFiles/tp_final_ayp3.dir/credito.c.obj"
+  "CMakeFiles/tp_final_ayp3.dir/ListaCreditos.c.obj"
   "tp_final_ayp3.pdb"
   "tp_final_ayp3.exe"
   "tp_final_ayp3.exe.manifest"

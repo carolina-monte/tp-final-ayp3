@@ -17,5 +17,6 @@ typedef struct nodoCredito{
 ListaCreditos getnodoCredito();
 ListaCreditos BuscarByCliente();
 ListaCreditos BuscarByMonto();
+ListaCreditos insertarNodoCredito(ListaCreditos primer_elemento, Cliente *cliente);
 
 #endif //TP_FINAL_AYP3_LISTACREDITOS_H
