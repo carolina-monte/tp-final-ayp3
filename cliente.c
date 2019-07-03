@@ -84,6 +84,9 @@ void menuCliente(Cliente *cliente){
             }
             break;
 
+            case 6:
+                break;
+
         }
     } while(opcion!=6);
 }

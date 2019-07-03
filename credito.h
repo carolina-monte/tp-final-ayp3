@@ -13,5 +13,7 @@ double montoDeLaCuota;
 int cantidadDeCuotasRestantes;
 int cantidadDeCuotas;
 struct miCliente *cliente;
+
+Credito *iniciarCredito(Cliente *cliente);
 } Credito;
 #endif //TP_FINAL_AYP3_CREDITO_H
