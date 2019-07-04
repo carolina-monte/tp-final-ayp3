@@ -86,8 +86,12 @@ int main(){
                 ListaClientes clientes_ID=NULL;
                 clientes_ID = BuscarByID(todosLosClientes,ID);
                 Cliente *cliente = clientes_ID->cliente;
-                menuCliente(cliente);
-                free(clientes_ID);
+                if (cliente!=NULL)
+                {
+                    menuCliente(cliente);
+                    free(clientes_ID);
+                }
+
 
             }
                 break;
