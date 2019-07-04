@@ -45,6 +45,7 @@ int main(){
                 ListaClientes clientesByNombre;
                 clientesByNombre=BuscarByNombre(todosLosClientes,nombre);
                 imprimirLista(clientesByNombre);
+                free(clientesByNombre);
 
             }
                 break;
@@ -59,6 +60,7 @@ int main(){
                 ListaClientes clientesByEdad;
                 clientesByEdad=BuscarByRangoDeEdad(todosLosClientes,edad_minima, edad_maxima);
                 imprimirLista(clientesByEdad);
+                free(clientesByEdad);
 
             }
                 break;
@@ -72,6 +74,7 @@ int main(){
                 ListaClientes clientes_ID=NULL;
                 clientes_ID = BuscarByID(todosLosClientes,ID);
                 imprimirLista(clientes_ID);
+                free(clientes_ID);
 
             }
             break;
@@ -84,6 +87,7 @@ int main(){
                 clientes_ID = BuscarByID(todosLosClientes,ID);
                 Cliente *cliente = clientes_ID->cliente;
                 menuCliente(cliente);
+                free(clientes_ID);
 
             }
                 break;
