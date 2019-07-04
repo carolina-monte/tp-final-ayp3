@@ -7,7 +7,7 @@ ListaCreditos insertarNodoCredito(ListaCreditos primer_elemento, Cliente *client
 {
     if (cliente->cantidad_de_creditos>03){
         printf("Error al insertar rango de edad, coloque correctamente la edad minima y maxima\n");
-        return NULL;
+        return primer_elemento;
     }
     else{
     if(primer_elemento==NULL)
