@@ -1,4 +1,3 @@
-#include "cliente.c"
 #include <string.h>
 #include "ListaClientes.h"
 
@@ -54,9 +53,9 @@ int main(){
                 int edad_minima;
                 int edad_maxima;
                 printf("Ingrese ela edad minima\n");
-                scanf("%d",edad_minima);
+                scanf("%d",&edad_minima);
                 printf("Ingrese ela edad maxima\n");
-                scanf("%d",edad_maxima);
+                scanf("%d",&edad_maxima);
                 ListaClientes clientesByEdad;
                 clientesByEdad=BuscarByRangoDeEdad(todosLosClientes,edad_minima, edad_maxima);
                 imprimirLista(clientesByEdad);
@@ -70,7 +69,7 @@ int main(){
 
                 int ID = 0;
                 printf("Ingrese el ID\n");
-                scanf("%d",ID);
+                scanf("%d",&ID);
                 ListaClientes clientes_ID=NULL;
                 clientes_ID = BuscarByID(todosLosClientes,ID);
                 imprimirLista(clientes_ID);
@@ -82,7 +81,7 @@ int main(){
             case 6:{
                 int ID = 0;
                 printf("Ingrese el ID del cliente a modificar\n");
-                scanf("%d",ID);
+                scanf("%d",&ID);
                 ListaClientes clientes_ID=NULL;
                 clientes_ID = BuscarByID(todosLosClientes,ID);
                 Cliente *cliente = clientes_ID->cliente;

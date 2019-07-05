@@ -18,5 +18,5 @@ char nombre[100];
 
 } *Credito;
 
-Credito *iniciarCredito(Cliente *cliente);
+Credito *iniciarCredito(struct  miCliente *cliente);
 #endif //TP_FINAL_AYP3_CREDITO_H
