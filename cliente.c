@@ -78,7 +78,15 @@ void menuCliente(Cliente *cliente){
                 printf("Ingrese el nombre\n");
                 scanf("%s",nombre);
                 creditoAOperar = BuscarCreditoByNombre(cliente->misCreditos, nombre)->credito;
-                creditoAOperar->cantidadDeCuotasRestantes--;
+                if(creditoAOperar!=NULL)
+                {
+                    creditoAOperar->cantidadDeCuotasRestantes--;
+                }
+                else
+                {
+                    printf("No se encontro un credito de nombre %s.\n",nombre);
+                }
+
             }
             case 5:{
                 char nombre[100];
