@@ -1,13 +1,14 @@
 ﻿# tp-final-ayp3
 HEADER FILES
 
+
 - ListaClientes.h: Se define lista enlazada de los clientes con la definición de typedef struct nodoCliente, a través de la cual se tiene cada cliente y un puntero al siguiente en la lista.
 
 - ListaCreditos.h: Análogamente a ListaClientes se define lista enlazada de los créditos con la definición de typedef struct nodoCredito, a través de la cual se tiene cada crédito y un puntero al siguiente en la lista. Se agrega un ID por crédito.
 
 - Cliente.h: Se define el cliente con sus características: su nombre, apellido, id, edad, dirección, un puntero al referido y un puntero a su lista de créditos. 
 
-- Credito.h: Se define el crédito con sus características: montoTotal, montoDeLaCuota, cantidadDeCuotasRestantes, cantidadDeCuotas y un puntero a cliente. 
+- Credito.h: Se define el crédito con sus características: montoTotal, montoDeLaCuota, cantidadDeCuotasRestantes, cantidadDeCuotas, nombre y un puntero a cliente. 
 
 
 DECISIONES DE DISEÑO
@@ -41,14 +42,26 @@ En cuanto a la información créditos del cliente, este puede solicitar el valor
 
 Por último, en este archivo hicimos un sub-menú que permite las siguientes opciones:
 
-Agregar cliente recomendado
-Dar de alta Crédito del cliente
-Listar Creditos
-Pagar cuota
-Cancelar Total de Créditos
-Salir
+1.	Agregar cliente recomendado
+2.	Dar de alta Crédito del cliente
+3.	Listar Creditos
+4.	Pagar cuota
+5.	Cancelar Total de Créditos
+6.	Salir
 
-El menú se despliega a través del  método void menuCliente() el cual recibe como parámetro un struct Cliente.
+El menú se despliega a través del método void menuCliente() el cual recibe como parámetro un struct Cliente.
+
+Opción 1: Añade un cliente referenciado, tal que al cliente que se pasó por parámetro en menuCliente() : cliente->referenciado=iniciar_cliente(), pasando por pantalla los datos del nuevo cliente.
+
+Opción 2: Declara un nuevo crédito e intenta añadirlo a la lista que de créditos que tiene el cliente. Si ya tiene 3 elementos en la lista, no realiza cambios
+
+Opción 3: Si la lista de créditos asociada a el cliente no está vacía, imprime por pantalla todos los créditos que posea: Nombre, saldo, cantidad de cuotas, monto de las cuotas y cantidad de cuotas restantes a pagar.
+
+Opción 4: Primero solicita el nombre de un crédito que esté asignado al cliente. Luego realiza una búsqueda por nombre a la lista de créditos que posee el cliente (El método está especificado en ListaCreditos). En el caso de que lo encuentre, descuenta 1 de la cantidad de cuotas a pagar.
+
+Opción 5:  Primero solicita el nombre de un crédito que esté asignado al cliente. Luego realiza una búsqueda por nombre a la lista de créditos que posee el cliente (El método está especificado en ListaCreditos). En el caso de que lo encuentre, la cantidad de cuotas se torna 0, pagando el total de las cuotas.
+
+Opción 6: Fin de la ejecución.
 
 
 Lista de clientes: 
@@ -57,9 +70,9 @@ Incluye los elementos de ListaClientes.h y de cliente.c, implementando una lista
 El primer método, “insertarNodoCliente” consiste en insertar un elemento al final de la lista y en el cual se reserva el espacio en memoria para el struct y se llama al de cliente “iniciar_cliente()” para guardar el elemento principal. El elemento siguiente se deja nulo, de esa forma al encontrar el último elemento, el nuevo será insertado como sucesor.
 En lo que respecta a los métodos de búsqueda, todos comparten una estructura similar a excepción de la búsqueda por id, el cual solo devuelve un elemento recorriendo de forma secuencial. El resto parten del criterio de devolver una lista de varios elementos(o al menos en los casos más realistas). Durante la ejecución del método se utilizan las siguientes variables:
 
-ListaCliente lista_a_recorrer, que apunta a lista que se pasa por parámetro
-ListaCliente lista_resultado, que comienza siendo nulo
-Lista ultimo_elemento, último elemento de la lista resultado
+1.	ListaCliente lista_a_recorrer, que apunta a lista que se pasa por parámetro
+2.	ListaCliente lista_resultado, que comienza siendo nulo
+3.	Lista ultimo_elemento, último elemento de la lista resultado
 
 Los métodos recorren a la lista “a recorrer”, en un loop(while) que finaliza al encontrarse con el elemento nulo, el cual se alcanza al final de la lista. Dentro del loop se encuentra la condición propia de cada búsqueda cuyo/s elemento/s se pasan por parámetro, como por ejemplo el nombre o el rango de edad(minima y maxima), haciendo una comparación con el/los elemento/os propios del nodo en el que se encuentra la variable lista_a_recorrer.
 
@@ -81,12 +94,12 @@ Incluye credito.h los elementos del struct Credito:
 
 
 
-Monto Total(double)
-Monto por cuota(double)
-Cantidad de cuotas(int)
-Cantidad de cuotas restantes(int)
-Cliente correspondientes(Cliente)
-Nombre (cha[100])
+1.	Monto Total(double)
+2.	Monto por cuota(double)
+3.	Cantidad de cuotas(int)
+4.	Cantidad de cuotas restantes(int)
+5.	Cliente correspondientes(Cliente)
+6.	Nombre (cha[100])
 
 Se incorpora el método iniciar_credito recibe como parámetro un cliente y toma por pantalla los datos del struct. Con ellos llama al método nuevo_credito() pasandole los datos por parámetro. Es en este último método donde se reserva el espacio en memoria y se asignan los datos a las variables de los struct
 //Completar: Si tiene el máximo de créditos
@@ -96,34 +109,47 @@ ListaCredito:
 Incluye el archivo credito.h. Se implementa esta lista con el fin de asignar créditos a los clientes registrar todos los créditos que estén o hayan estado vigentes. Consiste en un struct que contiene el nodo crédito y el struct siguiente.
 Implementa el método insertarNodoCredito, el cual recibe como parámetro la lista de créditos totales del tipo ListaCredito y el cliente de tipo Cliente, al cual debe estar asociado. Si el cliente tiene 3 elemento, devuelva la lista tal y como estaba. De lo contrario busca el final de la lista para ingresar el dato. Al encontrarlo, reserva el espacio en memoria y luego llama al método iniciar_credito(), para guardar el resultado en el dato Crédito del nodo, y que quede asignado al cliente. Para finalizar, el siguiente elemento de la lista se guarda como nulo.
 
+El siguiente método es BuscarCreditoByNombre() el cual recibe como parámetro una lista de créditos y un nombre a buscar. Retorna una lista de créditos cuyos nodos posean el mismo nombre que se pasó. Realiza una búsqueda secuencial e inserta los elementos encontrados en una “lista_resultado”. En este método, siempre se busca insertar los elementos en la última posición. Para esto se guarda una variable ”ultimo_agregado” que apunte siempre al final, con el fin de evitar recorrer la  lista resultado cada vez que se inserte un nuevo elemento.
 
 Main:
 
 Menú:
-Agregar cliente
-Imprimir clientes
-Buscar cliente por nombre
-Buscar cliente por rango de edad
-Buscar cliente por ID
-Sub-menu de cliente
-Cargar clientes
-Salir
+1.	Agregar cliente
+2.	Imprimir clientes
+3.	Buscar cliente por nombre
+4.	Buscar cliente por rango de edad
+5.	Buscar cliente por ID
+6.	Sub-menu de cliente
+7.	Cargar clientes
+8.	Salir
 
 Implementa este menú con las siguientes variables:
-Lista de creditos
-Lista de clientes
-Archivo (FILE)
-Clientes
+1.	Lista de creditos
+2.	Lista de clientes
+3.	Archivo (FILE)
+4.	Clientes
 
 El menú se implementa con un do/while, analizando como condición de corte que la variable opción no sea igual a 8. Esta última variable varía con el método de c “scanf()”, asignándole por consola un valor entero.
 
 
 Opción 1: Inserta un nuevo cliente con el método de ListaCliente: insertarNodoCliente, asignando el resultado en la variable Lista de créditos.
+
 Opción 2: Imprime lista de clientes usando el método de ListaCliente: imprimirLista
+
 Opción 3: Busca en la variable Lista de Clientes usando el correspondiente método de búsqueda a la condición. En este caso, utiliza el método BuscarByNombre() especificado en ListaCliente, pasando el nombre a buscar por consola. Al devolver la lista por nombre, imprime esta última y luego libera el espacio en memoria con el método free() de C.
+
 Opción 4:Busca en la variable Lista de Clientes usando el correspondiente método de búsqueda a la condición. En este caso, utiliza el método BuscarByRangoDeEdad(), pasando por consola los parámetros de edad mínima y máxima. Al terminar la búsqueda, imprime el resultado y luego libera la memoria con el método free() de C.
+
 Opción 5:Busca en la variable Lista de Clientes usando el correspondiente método de búsqueda a la condición. En este caso utiliza el método BuscarByID() especificado en ListaCliente, pasando la ID a buscar mediante la consola.Al terminar la búsqueda, imprime el resultado y luego libera la memoria con el método free() de C.
+
 Opción 6: Solicita la Id a buscar, la cual debe ser ingresada por consola. Busca el elemento en la lista de clientes y, si lo encuentra, utiliza dicho cliente para ejecutar el método menuCliente() especificado en Cliente.
+
 Opción 7: Abre el archivo registro.csv, en caso de que haya algún error lo imprime, cierra el archivo y terminar la ejecución. En el caso contrario, por cada empleado imprime por fila su apellido, nombre y id, siendo que cada elemento se ingresa en otra celda, uno al lado del otro. 
 
+Opción 8: Fin de la ejecución.
 
+Conclusiones: 
+
+El trabajo final resultó desafiante, aunque no injusto. Se presentaron algunas dificultades debido a los “includes” simultáneos que planteamos, como por ejemplo en crédito y cliente. En ambos structs, poseen un elemento del struct contrario, generando dudas debido a la sobreescritura de los “includes” y las posibles falla (como que los métodos figuren como no definidos).
+En nuestra opinión, hicimos un correcto uso de los punteros, aunque en la etapa final notamos que el código se podía mejorar agregando complejidad, como por ejemplo un header para las cuotas para determinar si están o no pagas. Por cuestiones de tiempo decidimos omitir esto último. Otro ejemplo es que al denotar el gran uso de algoritmos de búsqueda, hubiese sido óptimo implementar otra estructura que no sean lista simples(no eliminandolas del todo, pero si reemplazandola en elementos más extensos).
+Aun con los defectos encontramos, creemos que esta versión más simple satisface los puntos que debíamos cubrir para el trabajo, pese a que en sí el código es muy mejorable. El menú, si bien al principio se tenga que hacer algunas aclaraciones a la hora de interactuar con un cliente en específico, es sencillo y fácil de usar y se complementa muy bien con el resto de los elementos. Por lo tanto, en términos del uso de la interfaz y del cumplimiento de las consignas consideramos el trabajo resultó satisfactorio.
