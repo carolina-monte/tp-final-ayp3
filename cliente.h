@@ -26,7 +26,7 @@ Cliente *nuevo_cliente(char nombre[100], char apellido[100], int id, int edad, c
 //Valores por pantalla del nuevo cliente
 void menuCliente(Cliente *cliente);
 Cliente *insertar_recomendado(Cliente *n_cliente);
-Cliente *iniciar_cliente();
+Cliente *iniciarCliente();
 void imprimirClientes();
 //Insercion recursiva
 /*Cliente *insertar_en_lista(Cliente *n_cliente);

@@ -16,7 +16,7 @@ ListaClientes BuscarByNombre();
 ListaClientes BuscarByApellido();
 ListaClientes BuscarByNombreYApellido();
 ListaClientes BuscarByRangoDeEdad();
-ListaClientes BuscarByID(ListaClientes clientes, int id);
+ListaClientes BuscarById(ListaClientes clientes, int id);
 ListaClientes DarNuevoCredito();
 void imprimirLista(ListaClientes lista);
 void pagar_monto();

@@ -11,12 +11,13 @@
 typedef struct nodoCredito{
     int ID;
     struct miCredito *credito;
-    struct nodo *sig;
+    struct nodoCredito *sig;
 } *ListaCreditos;
 
 ListaCreditos getnodoCredito();
 ListaCreditos BuscarByCliente();
 ListaCreditos BuscarByMonto();
 ListaCreditos insertarNodoCredito(ListaCreditos primer_elemento, struct miCliente *cliente);
+ListaCreditos BuscarCreditoByNombre(ListaCreditos primer_elemento,char nombre[100]);
 
 #endif //TP_FINAL_AYP3_LISTACREDITOS_H

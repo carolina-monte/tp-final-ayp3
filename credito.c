@@ -3,6 +3,8 @@
 
 Credito *nuevo_Credito(double total, double cuota, int cuotas, Cliente *pCliente,char nombre[100]);
 
+
+
 Credito *iniciarCredito(Cliente *cliente)
 {
     Credito *nuevoCredito=NULL;

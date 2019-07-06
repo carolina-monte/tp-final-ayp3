@@ -1,4 +1,4 @@
-#include "cliente.c"
+#include "cliente.h"
 #include "ListaClientes.h"
 
 ListaClientes insertarNodoCliente(ListaClientes primer_elemento)
@@ -6,7 +6,7 @@ ListaClientes insertarNodoCliente(ListaClientes primer_elemento)
     if(primer_elemento==NULL)
     {
         primer_elemento=malloc(sizeof(ListaClientes));
-        primer_elemento->cliente=iniciarCredito();
+        primer_elemento->cliente=iniciarCliente();
         primer_elemento->sig=NULL;
     }
     else
@@ -17,7 +17,7 @@ ListaClientes insertarNodoCliente(ListaClientes primer_elemento)
 }
 
 void imprimirLista(ListaClientes lista){
-    ListaClientes lista_a_recorrer=lista
+    ListaClientes lista_a_recorrer=lista;
     //Recorror la lista
     while(lista_a_recorrer!=NULL){
         printf("Cliente nombre:%s %s Edad:%d Id:%d",lista_a_recorrer->cliente->nombre,
@@ -34,7 +34,7 @@ ListaClientes BuscarById(ListaClientes clientes, int id)
     ListaClientes ultimo_agregado;
 
     //Cortar en caso nulo
-    if(señalador==NULL)
+    if(senialador==NULL)
     {
         return clientes;
     }
@@ -42,7 +42,7 @@ ListaClientes BuscarById(ListaClientes clientes, int id)
     //Recorrer
     while (senialador!=NULL){
 
-        if(senialador->cliente->ID=id)
+        if(senialador->cliente->id=id)
         {
             //Caso primer agregado a la lista resultado
             if(lista_resultado==NULL){
@@ -57,14 +57,15 @@ ListaClientes BuscarById(ListaClientes clientes, int id)
                 //avanzo
                 ultimo_agregado=ultimo_agregado->sig;
                 //copio los datos
-                ultimo_agregado->cliente=lista_a_recorrer->cliente;
-                ultimo_agregado->ID=lista_a_recorrer->ID;
-                ultimo_agregado->sig=NULL;
+/*                ultimo_agregado->cliente=senialador->cliente;
+                ultimo_agregado->id=senialador->id;
+                ultimo_agregado->sig=NULL;*/
             }
         }
-        senialador=senialador->siguiente;
+        senialador=senialador->sig;
 
     }
+    return lista_resultado;
 }
 
 //Devuelve una lista de clientes con el mismo nombre que se pasa por parametro
@@ -88,7 +89,6 @@ ListaClientes BuscarByNombre(ListaClientes primer_elemento,char nombre[100]){
                 //Inicializar y copiar datos, en caso de error cambiar por sizeof(struct nodoCliente)
                 clientes_por_nombre=malloc(sizeof(ListaClientes));
                 clientes_por_nombre->cliente=lista_a_recorrer->cliente;
-                clientes_por_nombre->ID=lista_a_recorrer->ID;
                 clientes_por_nombre->sig=NULL;
                 ultimo_agregado=clientes_por_nombre;
             }else
@@ -99,7 +99,6 @@ ListaClientes BuscarByNombre(ListaClientes primer_elemento,char nombre[100]){
                 ultimo_agregado=ultimo_agregado->sig;
                 //copio los datos
                 ultimo_agregado->cliente=lista_a_recorrer->cliente;
-                ultimo_agregado->ID=lista_a_recorrer->ID;
                 ultimo_agregado->sig=NULL;
             }
         }
@@ -116,7 +115,7 @@ ListaClientes BuscarByRangoDeEdad(ListaClientes clientes, int edad_minima, int e
     ListaClientes ultimo_agregado;
 
     //Cortar en caso nulo
-    if(señalador==NULL)
+    if(senialador==NULL)
     {
         return clientes;
     }
@@ -141,16 +140,12 @@ ListaClientes BuscarByRangoDeEdad(ListaClientes clientes, int edad_minima, int e
                     //avanzo
                     ultimo_agregado=ultimo_agregado->sig;
                     //copio los datos
-                    ultimo_agregado->cliente=lista_a_recorrer->cliente;
-                    ultimo_agregado->ID=lista_a_recorrer->ID;
-                    ultimo_agregado->sig=NULL;
+                    //ultimo_agregado->cliente=lista_a_recorrer->cliente;
+                    //ultimo_agregado->sig=NULL;
                 }
             }
-            senialador=senialador->siguiente;
+            senialador=senialador->sig;
 
     }
 }
 
-int main(void){
-    return 0;
-}
