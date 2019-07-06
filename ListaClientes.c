@@ -17,13 +17,18 @@ ListaClientes insertarNodoCliente(ListaClientes primer_elemento)
 }
 
 void imprimirLista(ListaClientes lista){
-    ListaClientes lista_a_recorrer=lista;
+    Cliente *precorrer;
+    precorrer = lista->cliente;
     //Recorror la lista
-    while(lista_a_recorrer!=NULL){
-        printf("Cliente nombre:%s %s Edad:%d Id:%d",lista_a_recorrer->cliente->nombre,
-        lista_a_recorrer->cliente->apellido,lista_a_recorrer->cliente->edad,lista_a_recorrer->cliente->id);
+    while(precorrer!=NULL) {
+        printf("Cliente nombre:%s %s Edad:%d Id:%d",
+                precorrer->nombre,
+                precorrer->apellido,
+                precorrer->edad,
+                precorrer->id);
+
+        precorrer = lista->sig;
     }
-    lista_a_recorrer=lista_a_recorrer->sig;
 }
 
 ListaClientes BuscarById(ListaClientes clientes, int id)
