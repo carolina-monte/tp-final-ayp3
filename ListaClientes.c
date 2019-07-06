@@ -33,26 +33,26 @@ void imprimirLista(ListaClientes lista){
 
 ListaClientes BuscarById(ListaClientes clientes, int id)
 {
-    ListaClientes senialador=clientes;
+    ListaClientes lista_a_recorrer=clientes;
     ListaClientes lista_resultado=NULL;
     //Esta variable señala siempre el final de la lista para llamarla a la hora de insertar un nuevo elemento
     ListaClientes ultimo_agregado;
 
     //Cortar en caso nulo
-    if(senialador==NULL)
+    if(lista_a_recorrer==NULL)
     {
         return clientes;
     }
 
     //Recorrer
-    while (senialador!=NULL){
+    while (lista_a_recorrer!=NULL){
 
-        if(senialador->cliente->id=id)
+        if(lista_a_recorrer->cliente->id=id)
         {
             //Caso primer agregado a la lista resultado
             if(lista_resultado==NULL){
                 lista_resultado=malloc(sizeof(ListaClientes));
-                lista_resultado->cliente=senialador->cliente;
+                lista_resultado->cliente=lista_a_recorrer->cliente;
                 lista_resultado->sig=NULL;
                 ultimo_agregado=lista_resultado;
             }
@@ -62,12 +62,12 @@ ListaClientes BuscarById(ListaClientes clientes, int id)
                 //avanzo
                 ultimo_agregado=ultimo_agregado->sig;
                 //copio los datos
-/*                ultimo_agregado->cliente=senialador->cliente;
-                ultimo_agregado->id=senialador->id;
+/*                ultimo_agregado->cliente=lista_a_recorrer->cliente;
+                ultimo_agregado->id=lista_a_recorrer->id;
                 ultimo_agregado->sig=NULL;*/
             }
         }
-        senialador=senialador->sig;
+        lista_a_recorrer=lista_a_recorrer->sig;
 
     }
     return lista_resultado;
